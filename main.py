@@ -75,13 +75,11 @@ def format_sale_for_fiken(sale, customer_id):
         'saleNumber': f"INV-{datetime.now().strftime('%Y%m%d%H%M%S')}",
         'date': sale['date'],
         'kind': 'external_invoice',
-        'totalPaid': sale['amount'],
-        'lines': [
-            {
-                'description': sale['description'],
-                'netPrice': sale['amount'],
-                'account': 3200,
-                'vatType': 'SALG_FRITATT_FOR_MVA_UTENFOR_AVGIFTSOMRmentAccount': "1960:10001",
+        'totalPaid': total_paid,  # The total amount paid
+        'lines': [line_item],
+        'currency': sale['currency'],
+        'customerId': customer_id,
+        'paymentAccount': "1960:10001",
         'paymentDate': sale['date']
     }
     return fiken_sale
