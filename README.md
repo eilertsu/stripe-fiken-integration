@@ -65,7 +65,7 @@ Determine the VAT type and account based on the transaction amount and total pur
 Format the transaction for Fiken, including VAT calculations where applicable.
 Post the formatted transaction to Fiken.
 Save progress and data locally to avoid duplicate processing in subsequent runs.
-Contributing
+## Contributing
 Feel free to fork this repository and make your own improvements. Pull requests are welcome!
 
 ## License
