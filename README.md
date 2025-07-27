@@ -27,6 +27,21 @@ Run the script:
 python main.py # For businesses not registered in the MVA registry
 python main_mva.py # For businesses registered in the MVA registry
 
+## Autorun
+Use cronjob to run automatically everyday:
+```
+crontab -e
+```
+insert following and make sure to edit path/to/your with the correct path
+```
+0 2 * * * /usr/bin/python3 /PATH/main.py >> /PATH/logfile.log 2>&1
+```
+give permission to run
+```
+chmod 755 /PATH/logs/
+```
+
+
 ## Configuration
 The script can be customized to fit your specific accounting needs. The main configuration points are:
 
