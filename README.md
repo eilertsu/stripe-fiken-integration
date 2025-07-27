@@ -19,28 +19,29 @@ git clone https://github.com/yourusername/stripe-to-fiken.git
 cd stripe-to-fiken
 
 Create a .env file in the root directory and add your API keys:
+```
 STRIPE_API_KEY=your_stripe_api_key
 FIKEN_API_TOKEN=your_fiken_api_token
 COMPANY_SLUG=your_company_slug
-
+```
 Run the script:
 python main.py # For businesses not registered in the MVA registry
 python main_mva.py # For businesses registered in the MVA registry
 
-## Autorun
-Use cronjob to run automatically everyday:
+## Autorun on linux server using cronjobs
+To use cronjob to run the script automatically at 2 am everyday open a terminal and run:
 ```
 crontab -e
 ```
-insert following and make sure to edit path/to/your with the correct path
+insert the following and make sure to edit PATH with the correct path, and SCRIPT with the correct script(main.py or main_mva.py)
 ```
-0 2 * * * /usr/bin/python3 /PATH/main.py >> /PATH/logfile.log 2>&1
+0 2 * * * /usr/bin/python3 /PATH/SCRIPT.py >> /PATH/logfile.log 2>&1
 ```
-give permission to run
+give permission to run:
 ```
 chmod 755 /PATH/logs/
 ```
-
+Runs once everyday and logs to logfile.log
 
 ## Configuration
 The script can be customized to fit your specific accounting needs. The main configuration points are:
