@@ -35,7 +35,7 @@ crontab -e
 ```
 insert the following and make sure to edit PATH with the correct path, and SCRIPT with the correct script(main.py or main_mva.py)
 ```
-0 2 * * * /usr/bin/python3 /PATH/stripe-fiken-integration/SCRIPT.py >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1
+0 2 * * * echo "$(date '+\%Y-\%m-\%d \%H:\%M:\%S') - Running SCRIPT.py" >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1 && /usr/bin/python3 /PATH/stripe-fiken-integration/SCRIPT.py >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1
 ```
 give permission to run:
 ```
