@@ -39,7 +39,8 @@ insert the following and make sure to edit PATH with the correct path, and SCRIP
 ```
 give permission to run:
 ```
-chmod 755 /PATH/logs/
+mkdir logs
+chmod 755 /PATH/stripe-fiken-integration/logs/
 ```
 Runs once everyday and logs to logfile.log
 
