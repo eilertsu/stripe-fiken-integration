@@ -33,16 +33,16 @@ To use cronjob to run the script automatically at 2 am everyday open a terminal 
 ```
 crontab -e
 ```
-insert the following and make sure to edit PATH with the correct path, and SCRIPT with the correct script(main.py or main_mva.py)
-```
-0 2 * * * echo "$(date '+\%Y-\%m-\%d \%H:\%M:\%S') - Running SCRIPT.py" >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1 && /usr/bin/python3 /PATH/stripe-fiken-integration/SCRIPT.py >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1
-```
 give permission to run:
 ```
 mkdir logs
 chmod 755 /PATH/stripe-fiken-integration/logs/
 ```
-Runs once everyday and logs to logfile.log
+insert the following and make sure to edit PATH with the correct path, and SCRIPT with the correct script(main.py or main_mva.py)
+```
+0 2 * * * echo "$(date '+\%Y-\%m-\%d \%H:\%M:\%S') - Running SCRIPT.py" >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1 && /usr/bin/python3 /PATH/stripe-fiken-integration/SCRIPT.py >> /PATH/stripe-fiken-integration/logs/logfile.log 2>&1
+```
+Runs once everyday and logs to logfile.log with date and time specified.
 
 ## Configuration
 The script can be customized to fit your specific accounting needs. The main configuration points are:
